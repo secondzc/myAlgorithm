@@ -5,17 +5,19 @@ package com.tongyuan.common.list;
  */
 public class MyList {
 
-    public static Node getList() {
-        Node<Integer>[] nodes = new Node[5];
-        for (int i = 0; i < 4; i++) {
-            nodes[i].setValue(i);
-            nodes[i].setNext(nodes[i+1]);
+    public static Node array2List(Integer[] arr){
+        if(arr.length<1){
+            return null;
         }
-        nodes[4].setValue(4);
-        return nodes[0];
+        Node head = new Node(arr[0]);
+        Node tail = head;
+        for (int i = 1; i < arr.length; i++) {
+            Node node = new Node();
+            node.setValue(arr[i]);
+            tail.setNext(node);
+            tail = node;
+        }
+        return head;
     }
 
-    public static void main(String[] args) {
-        Node<Integer> list = getList();
-    }
 }

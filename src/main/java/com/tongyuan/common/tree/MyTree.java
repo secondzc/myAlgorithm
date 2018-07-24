@@ -13,8 +13,9 @@ package com.tongyuan.common.tree;
  *      4  7
  */
 public class MyTree {
-    public static TreeNode getTree() {
-        TreeNode[] treeNodes = new TreeNode[7];
+    static TreeNode[] treeNodes;
+    static {
+         treeNodes = new TreeNode[7];
         for (int i = 0; i < 7; i++) {
             treeNodes[i] = new TreeNode();
         }
@@ -37,8 +38,18 @@ public class MyTree {
         treeNodes[5].setValue("4");
 
         treeNodes[6].setValue("7");
+    }
+
+    public static TreeNode getTree() {
         return treeNodes[0];
     }
+    public static TreeNode get9(){
+        return getTree().getLeft().getLeft();
+    }
+    public static TreeNode get4(){
+        return getTree().getLeft().getRight().getLeft();
+    }
+
 
     public static void printNode(TreeNode treeNode) {
         if(treeNode == null){

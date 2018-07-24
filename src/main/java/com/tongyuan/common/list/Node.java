@@ -24,4 +24,11 @@ public class Node<T> {
     public void setNext(Node next) {
         this.next = next;
     }
+
+    public Node(Comparable<T> value) {
+        this.value = value;
+    }
+
+    public Node() {
+    }
 }

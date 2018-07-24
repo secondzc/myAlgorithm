@@ -3,6 +3,7 @@ package com.tongyuan.sword;
 /**
  * Created by zhangcy on 2018/7/22
  * 此题注意分段，以前看起来比较麻烦而已
+ * 判断一个序列是不是二叉搜索树的后序遍历序列
  */
 public class 二叉搜索树的后序遍历序列 {
     public static boolean isSequence(int[] nodes, int start, int end){
