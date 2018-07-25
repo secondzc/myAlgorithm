@@ -5,7 +5,7 @@ package com.tongyuan.common.list;
  */
 public class MyList {
 
-    public static Node array2List(Integer[] arr){
+    public static Node array2List(int[] arr){
         if(arr.length<1){
             return null;
         }

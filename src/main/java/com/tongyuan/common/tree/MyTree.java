@@ -4,9 +4,9 @@ package com.tongyuan.common.tree;
  * Created by zhangcy on 2018/7/21
  *
  * 构造如下的一颗树
- *         8
+ *         3
  *        / \
- *       8   7
+ *       8   5
  *      / |
  *     9  2
  *       / |
@@ -19,7 +19,7 @@ public class MyTree {
         for (int i = 0; i < 7; i++) {
             treeNodes[i] = new TreeNode();
         }
-        treeNodes[0].setValue("8");
+        treeNodes[0].setValue("3");
         treeNodes[0].setLeft(treeNodes[1]);
         treeNodes[0].setRight(treeNodes[2]);
 
@@ -27,7 +27,7 @@ public class MyTree {
         treeNodes[1].setLeft(treeNodes[3]);
         treeNodes[1].setRight(treeNodes[4]);
 
-        treeNodes[2].setValue("7");
+        treeNodes[2].setValue("5");
 
         treeNodes[3].setValue("9");
 

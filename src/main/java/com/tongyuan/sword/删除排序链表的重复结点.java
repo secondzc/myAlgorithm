@@ -38,7 +38,7 @@ public class 删除排序链表的重复结点 {
     }
 
     public static void main(String[] args) {
-        Node head = MyList.array2List(new Integer[]{1,2,3,3,4,4,5});
+        Node head = MyList.array2List(new int[]{1,2,3,3,4,4,5});
         Node head1 = deletRepeat(head);
         System.out.println(head1);
     }

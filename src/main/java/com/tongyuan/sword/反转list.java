@@ -1,5 +1,6 @@
 package com.tongyuan.sword;
 
+import com.tongyuan.common.list.MyList;
 import com.tongyuan.common.list.Node;
 
 /**
@@ -7,21 +8,21 @@ import com.tongyuan.common.list.Node;
  */
 public class 反转list {
 
-//    方法一：递归
-//    public static void reverse(TreeNode node) {
-//        if(node == null) {
-//            return ;
-//        }
-//        TreeNode next = node.getNext();
-//        reverse(next);
-//        node.setNext(null);
-//        if(next != null) {
-//            next.setNext(node);
-//        }
-//    }
+    //方法一：递归
+    public static void reverse1(Node node) {
+        if(node == null) {
+            return ;
+        }
+        Node next = node.getNext();
+        reverse1(next);
+        node.setNext(null);
+        if(next != null) {
+            next.setNext(node);
+        }
+    }
 
     //方法二：非递归
-    public static void reverse(Node node) {
+    public static void reverse2(Node node) {
         Node last = null;
         while(node!=null) {
             Node next = node.getNext();
@@ -37,12 +38,8 @@ public class 反转list {
     }
 
     public static void main(String[] args) {
-        Node node0 = new Node();
-        node0.setValue(0);
-        Node node1 = new Node();
-        node1.setValue(1);
-        node0.setNext(node1);
-        reverse(node0);
-        System.out.println(1);
+        Node node = MyList.array2List(new int[]{1,2,3});
+        reverse1(node);
+        System.out.println(node);
     }
 }
