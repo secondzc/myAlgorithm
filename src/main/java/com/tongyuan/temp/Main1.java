@@ -2,61 +2,37 @@ package com.tongyuan.temp;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
- * Created by zhangcy on 2018/7/22
- * 第一行包含2个整数 N、M，分别表示候选球星数量以及选票数量。
- 接下来有 M 行，每行是一个长度为 N 的字符串，每个字符串表示一张选票上的信息。每个字符串的第 k (0 <= k < N) 个字符，表示
- 这张选票对第 k 个候选球星的评级。
- 数据范围：
- 1 <= N <= 50
- 1 <= M <= 50
- 字符串只包含小写英文字母(a-z)。
+ * Created by zhangcy on 2018/8/13
  */
 public class Main1 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-        List<String> strs = new ArrayList<>(m);
-        for (int i = 0; i < m; i++) {
-            strs.add(sc.next());
-        }
-        boolean flag = false;
-        for (int i = 0; i < n; i++) {
-            int count = 0;
-            for (int j = 0; j < n; j++) {
-                if(isStronger(strs,i,j)){
-                    count++;
-                }
+        public static int[] plusOne(int[] digits) {
+            StringBuilder sb = new StringBuilder();
+            for(int i=0;i<digits.length;i++){
+                sb.append(digits[i]);
             }
-            if(count== n-1){
-                flag = true;
-                System.out.println(i);
-                break;
+            Integer num = Integer.parseInt(sb.toString());
+            num++;
+            String strNum = String.valueOf(num);
+            System.out.println(strNum);
+            List<Integer> result = new ArrayList<>();
+            for(int i=0;i<strNum.length();i++){
+                System.out.println(strNum.indexOf(i));
+                String str = String.valueOf(strNum.indexOf(i));
+                System.out.println(Integer.parseInt(str));
+                result.add(Integer.parseInt(String.valueOf(strNum.indexOf(i))));
             }
-        }
-        if(!flag){
-            System.out.println(-1);
-        }
-    }
-    public static boolean isStronger(List<String> strs, int m, int n){
-        int countm = 0;
-        int countn = 0;
-        for (int i = 0; i < strs.size(); i++) {
-            if(strs.get(i).charAt(m) > strs.get(i).charAt(n)){
-                countn++;
+            Object[] result1 =  result.toArray();
+            int[] result2 = new int[result1.length];
+            for(int i=0;i<result1.length;i++){
+                result2[i] = (Integer)result1[i];
+                System.out.println(result2[i]);
             }
-            if(strs.get(i).charAt(m) < strs.get(i).charAt(n)){
-                countm++;
-            }
+            return result2;
         }
-        if(countm>countn){
-            return true;
-        }else{
-            return false;
-        }
-    }
 
+    public static void main(String[] args) {
+        plusOne(new int[]{0});
+    }
 }
